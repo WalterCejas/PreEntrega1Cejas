@@ -8,8 +8,10 @@ function App() {
 
   return (
     
-      <><NavBar />
-      <ItemListContainer greeting="Bienvenidos" /></>
+      <>
+      <NavBar />
+      <ItemListContainer />
+      </>
   )
 }
 

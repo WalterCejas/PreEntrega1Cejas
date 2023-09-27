@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Row } from 'react-bootstrap'
+import  Container  from 'react-bootstrap/Container'
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
+    const [items,setItems] =  useState([])
+
+    const getData = () => {
+        fetch("https://fakestoreapi.com/products")
+            .then( response => response.json())
+            .then(data => setItems(data))
+            .catch(error => console.log(error))
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+    console.log(items)
     return (
-        <div>{greeting}</div>
+        <Container>
+            <Row>
+                <ItemList items={items}/>
+            </Row>
+        </Container>
     )
 }
 

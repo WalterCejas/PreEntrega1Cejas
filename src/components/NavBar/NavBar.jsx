@@ -1,6 +1,7 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
-
+import  Container  from "react-bootstrap/Container";
+import  Navbar  from "react-bootstrap/Navbar";
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
